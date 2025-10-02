@@ -397,9 +397,23 @@
 /* CTA Section */
 .cta {
   display: flex;
-  justify-content: center; /* Center the buttons horizontally */
+  justify-content: center; /* Center the buttons by default */
   gap: 1rem; /* Space between the buttons */
   margin-top: 1.2rem; /* Add top margin for spacing */
+}
+
+/* For Desktop (Website Mode), Left Align Buttons */
+@media (min-width: 769px) {
+  .cta {
+    justify-content: flex-start; /* Left-align the buttons on desktop */
+  }
+
+  .cta .btn {
+    width: auto; /* Reset the width to auto for left-aligned buttons */
+    font-size: 1.2rem; /* Adjust button font size */
+    padding: 12px; /* Adjust padding for better mobile sizing */
+    text-align: left; /* Left-align the button text */
+  }
 }
 
 /* Mobile-specific adjustments for CTA */
@@ -417,18 +431,11 @@
     padding: 12px; /* Adjust padding for better mobile sizing */
     text-align: center; /* Ensure text inside the button is centered */
   }
-
-  .cta .btn.buy {
-    background: linear-gradient(180deg, var(--forest-600), var(--forest-500)); /* Green gradient */
-    color: #fff;
-    box-shadow: var(--shadow);
-  }
-
-  .cta .btn.outline {
-    background: rgba(255,255,255,.06);
-    color: #ecf7ef;
-  }
 }
+
+
+
+
     
   </style>
 </head>
