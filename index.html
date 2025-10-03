@@ -59,8 +59,17 @@
     nav a{ color:#ecf7ef; text-decoration:none; margin-left:1rem; font-weight:600; opacity:.9; }
     nav a:hover{ opacity:1; }
 
-
-    /* Hero Section */
+    .brand img {
+      max-width: 100%;   /* Never exceed the container */
+      height: auto;      /* Maintain aspect ratio */
+      max-height: 50px;  /* Keep it from being too tall */
+    }
+    @media (max-width: 768px) {
+      .brand img {
+        max-height: 40px; /* Slightly smaller logo on mobile */
+      }
+    }
+        /* Hero Section */
     .hero {
     color: #fff;
     padding: 84px 0 48px;
@@ -476,7 +485,7 @@
   <header>
     <div class="container nav">
         <a href="#top" class="brand" aria-label="H.E.A.L. Abby and the Relics home">
-            <img src="heal_logo_new.png" alt="H.E.A.L. Abby and the Relics" style="height: 50px; vertical-align: middle; margin-right: 10px;" />
+            <img src="heal_logo_new.png" alt="H.E.A.L. Abby and the Relics" style="vertical-align: middle; margin-right: 10px;" />
             <!--<img src="h.png" alt="H.E.A.L. Abby and the Relics" style="height: 50px; vertical-align: middle; margin-right: 10px;" />-->
             <!--<span>Abby and the Relics</span>-->
             
