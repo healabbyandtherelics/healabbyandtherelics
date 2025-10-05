@@ -88,7 +88,7 @@
     .cta{ display:flex; gap:.8rem; margin-top:1.2rem; flex-wrap:wrap; }
     .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.1rem; border-radius:12px; border:1px solid rgba(255,255,255,.12); text-decoration:none; font-weight:700; }
     .btn.buy{ background: linear-gradient(180deg, var(--forest-600), var(--forest-500)); color:#fff; box-shadow: var(--shadow); }
-    .btn.outline{ color:#ecf7ef; background: rgba(255,255,255,.06); }
+    .btn.outline{ color:#ecf7ef; padding: 0.5rem 1rem; background: rgba(255,255,255,.06); }
     .btn:hover{ transform: translateY(-1px); }
 
     .btn.buy {
@@ -478,6 +478,38 @@
       cursor: not-allowed; /* Change the cursor to show that it's not interactive */
       pointer-events: none; /* Disable clicking on these buttons */
     }
+
+
+    /* Amazon image CTA */
+    .cta .amazon-btn{
+      display:inline-flex;
+      align-items:center;
+      border-radius:12px;
+      overflow:hidden;             /* soft rounded edges */
+      box-shadow: var(--shadow);
+      line-height: 0;              /* removes extra inline-gap around the image */
+    }
+
+    .cta .amazon-btn img {
+      display: block;
+      width: 200px;   /* slightly larger than social buttons */
+      height: auto;
+    }
+
+    /* Adjust for smaller screens */
+    @media (max-width: 768px) {
+      .cta .amazon-btn img {
+        width: 230px;  /* scales down proportionally on mobile */
+      }
+    }
+
+/* Make "See Reviews" button same height as Buy on Amazon button */
+.cta .btn.outline[href="#reviews"] {
+  padding: 0.6rem 1.1rem !important; /* matches Amazon button height visually */
+  font-size: 1rem !important;        /* balances text size */
+  line-height: 1 !important;         /* prevents tall text box */
+}
+
   </style>
 </head>
 <body>
@@ -508,8 +540,15 @@
           A spellbinding debut fantasy novel crafted by two imaginative young authors, transporting you into the enchanting realms of H.E.A.L. (Happy Ever After Land), a world brimming with magic and wonder!<p>
           Twelve-year old Abby Palmer discovers that the world of fairy tale is real. When a prophecy reveals that she must stop an evil queen from destroying the world, Abby embarks on a daring quest - one that leads her to unexpected friendships, magical adventures, and courage to face her destiny.
         <div class="cta">
-          <a class="btn buy" href="#buy">Buy the Book</a>
-          <a class="btn outline" href="#reviews">See Reviews</a>
+         <!-- <a class="btn buy" href="#buy">Buy the Book</a>-->
+
+          <a class="amazon-btn"
+            href="https://www.amazon.com/dp/1969252731/ref=sr_1_1?crid=2WNLL6LM66126&dib=eyJ2IjoiMSJ9.rOp7wzkEelcolF_VxKJLhQ.eE2wRZTjKm90rKwYTJkFhYdYmslr64g9ski3Uq0jvdg&dib_tag=se&keywords=heal+abby+and+the+relics&qid=1759627141&s=digital-text&sprefix=heal+abby+and+the+relics%2Cdigital-text%2C276&sr=1-1-catcorr"
+            target="_blank" rel="noopener">
+            <img src="amazon_buy_btn.png" alt="Buy now on Amazon">
+          </a>          
+  
+         <!-- <a class="btn outline" href="#reviews">See Reviews</a>-->
         </div>
     
         <div class="cta" style="margin-top:.6rem;">
@@ -564,11 +603,11 @@
       <div class="card" aria-label="Details">
         <ul style="list-style:none; padding:0; margin:0; display:grid; gap:.6rem;">
           <li><strong>Audience:</strong> 7+ years</li>
-          <li><strong>Length:</strong> ~414 pages</li>
+          <li><strong>Length:</strong> ~428 pages</li>
           <li><strong>Formats:</strong> Hardcover • Paperback • eBook</li>
-          <li><strong>ISBN:</strong> 978-19-69252-39-6</li>
+          <li><strong>ISBN:</strong> 978-19-69252-73-0</li>
           <li><strong>Publisher:</strong> Hemingway Publishers</li>
-          <li><strong>Release:</strong> Fall 2025</li>
+          <li><strong>Release:</strong> October 2025</li>
         </ul>
       </div>
     </div>
@@ -576,13 +615,13 @@
 
   <section id="authors">
     <div class="container">
-      <h2>About the Authors</h2>
+      <h2>Meet our young authors</h2>
       <div class="authors grid-2">
         <div class="card person">
             <div class="avatar"><img src="adhira.jpg" alt="Co-author portrait"/></div>
             <div>
               <h3>Adhira Meenakshisankar</h3>
-              <p>Adhira Meenakshisankar lives in Illinois. She is constantly surrounded by books. When she’s
+              <p>Adhira Meenakshisankar is a 11-year old 6th grader from Illinois. She is constantly surrounded by books. When she’s
                 not reading or writing, she plays clarinet and piano. She also loves tennis and has a purple belt
                 in karate. This is her debut book.</p>
             </div>
@@ -591,7 +630,7 @@
           <div class="avatar"><img src="ashwika.jpg" alt="Author portrait"/></div>
           <div>
             <h3>Ashwika Ballepu</h3>
-            <p>Ashwika lives in Illinois. She enjoys reading and writing. This is Ashwika’s first book and she wrote this book because she
+            <p>Ashwika is a 11-year old 6th grader from Illinois. She enjoys reading and writing. This is Ashwika’s first book and she wrote this book because she
               believes that everyone should be able to experience a little bit of magic in their lives.</p>
           </div>
         </div>
@@ -627,7 +666,7 @@
       <h2>Where to Buy</h2>
       <p class="lead">Available at your favorite booksellers.</p>
       <div class="retailers" aria-label="Retailer links">
-        <a href="#" target="_blank" rel="noopener" class="buy-btn">
+        <a href="https://www.amazon.com/dp/1969252731/ref=sr_1_1?crid=2WNLL6LM66126&dib=eyJ2IjoiMSJ9.rOp7wzkEelcolF_VxKJLhQ.eE2wRZTjKm90rKwYTJkFhYdYmslr64g9ski3Uq0jvdg&dib_tag=se&keywords=heal+abby+and+the+relics&qid=1759627141&s=digital-text&sprefix=heal+abby+and+the+relics%2Cdigital-text%2C276&sr=1-1-catcorr" target="_blank" rel="noopener" class="buy-btn">
           <img src="amzon.png" alt="Amazon Icon" class="btn-icon" /> 
           Amazon
         </a>
