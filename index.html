@@ -364,6 +364,19 @@
     .person h3{ margin:.2rem 0 .3rem; font-size:1.1rem; }
     .person p{ margin:0; color:#3a5648; }
 
+    /* Add this below your existing .card style or inside a specific selector for authors */
+    #authors .card {
+      background: #f4f9f4; /* very light green */
+      border: 1px solid rgba(42, 126, 85, 0.15); /* subtle forest tint */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); /* soft depth */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #authors .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
     .socials{ display:flex; gap:.6rem; }
     .socials a{ display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; padding:.6rem .8rem; border-radius:10px; background:rgba(255,255,255,.08); color:#ecf7ef; border:1px solid rgba(255,255,255,.12); }
     .socials svg{ width:18px; height:18px; }
