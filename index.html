@@ -526,12 +526,94 @@
       }
     }
 
-/* Make "See Reviews" button same height as Buy on Amazon button */
-.cta .btn.outline[href="#reviews"] {
-  padding: 0.6rem 1.1rem !important; /* matches Amazon button height visually */
-  font-size: 1rem !important;        /* balances text size */
-  line-height: 1 !important;         /* prevents tall text box */
-}
+    /* Make "See Reviews" button same height as Buy on Amazon button */
+    .cta .btn.outline[href="#reviews"] {
+      padding: 0.6rem 1.1rem !important; /* matches Amazon button height visually */
+      font-size: 1rem !important;        /* balances text size */
+      line-height: 1 !important;         /* prevents tall text box */
+    }
+
+  /* ================================
+    AuthorShout Award Banner (Fixed)
+    ================================ */
+
+    .award-banner {
+    background: linear-gradient(
+      180deg,
+      rgba(11, 43, 28, 0.98),
+      rgba(18, 59, 40, 0.98)
+    );
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 40px 0;
+  }
+
+  /* Make entire section clickable */
+  .award-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  /* Layout */
+  .award-content {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    transition: transform 0.3s ease;
+  }
+
+  .award-link:hover .award-content {
+    transform: translateY(-2px);
+  }
+
+  /* Award image */
+  .award-content img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #0b2418;
+    box-shadow:
+      0 0 0 2px rgba(212, 175, 55, 0.35),
+      0 18px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* TEXT — explicitly colored (this fixes invisibility) */
+  .award-text h2 {
+    font-family: Merriweather, serif;
+    margin: 0 0 10px;
+    color: #d4af37; /* gold */
+    text-shadow: none;
+  }
+
+  .award-text p {
+    margin: 0;
+    color: #ecf7ef; /* light readable green */
+    font-size: 1.05rem;
+    line-height: 1.55;
+    max-width: 65ch;
+  }
+
+  /* Link hint text */
+  .award-text .award-cta {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #a6c7a1;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .award-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .award-content img {
+      max-width: 260px;
+    }
+  }
+
 
   </style>
 </head>
@@ -555,6 +637,37 @@
   </header>
 
   <main id="top" class="hero">
+
+    <!-- AuthorShout Award Banner -->
+    <div class="award-banner">
+      <a
+        href="https://authorshout.com/recommended-read-winners-7th-annual-book-awards/"
+        target="_blank"
+        rel="noopener"
+        class="award-link"
+        aria-label="View AuthorShout 2025 Recommended Read Award winners"
+      >
+        <div class="award-content">
+          <img
+            src="authorshout.jpeg"
+            alt="AuthorShout 2025 Recommended Read Award"
+          />
+          <div class="award-text">
+            <h2>🎉 Award-Winning Fantasy!</h2>
+            <p>
+              <strong>H.E.A.L. Abby and the Relics</strong> has been honored with the
+              <strong>2025 AuthorShout “Recommended Read” Award</strong>,
+              recognizing outstanding storytelling, imagination, and young author talent.
+            </p>
+            <p style="margin-top:8px; font-size:.95rem; color:#d7ead5;">
+              → View official award listing
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
     <div class="container hero-grid">
       <div>
         <p class="kicker">Fantasy • Magic World</p>
